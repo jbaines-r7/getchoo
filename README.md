@@ -17,7 +17,7 @@ albinolobster@ubuntu:~/getchoo/build/tmp$ find . -type f | sed -n 's/..*\.//p' |
 
 Below is an example of parsing the pdm.sgz from 7.18.1 that was extracted by `theway`:
 
-```sh
+```
 albinolobster@ubuntu:~/getchoo/build$ ./getchoo ~/theway/build/output/pdm.sgz 
 
   MM'"""""`MM            dP            dP
