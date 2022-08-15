@@ -115,6 +115,14 @@ int main(int p_argc, char** p_argv)
 
         // looool directory traversal
         std::cout << "[+] Creating tmp/" << filename << std::endl;
+        
+        // does the directory it wants to create exist?
+        std::filesystem::path dir_path = std::filesystem::path("tmp/" + filename).parent_path();
+        if (!std::filesystem::exists(dir_path))
+        {
+            std::filesystem::create_directories(dir_path);
+        }
+        
         std::ofstream out("tmp/" + filename, std::ifstream::trunc | std::ifstream::binary);
 
         // note that this is wildly inefficient
@@ -130,3 +138,4 @@ int main(int p_argc, char** p_argv)
     std::cout << "[+] Done!" << std::endl;
     return EXIT_SUCCESS;
 }
+
